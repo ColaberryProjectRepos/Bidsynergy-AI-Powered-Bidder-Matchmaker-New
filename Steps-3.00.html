@@ -1,0 +1,53 @@
+
+System Architecture
+3
+<p></p><p class="MsoNormal">The system integrates collaborative filtering and Machine
+Learning models, processing federal contract data to recommend relevant
+partners.<o:p></o:p></p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal">Data
+     ingestion: Via API from SAM.gov to Microsoft Fabric platform<o:p></o:p></li>
+ <li class="MsoNormal">ETL
+     Pipeline: Data is loaded into a Lakehouse as CSV, cleaned, and stored in
+     delta tables<o:p></o:p></li>
+ <li class="MsoNormal">Filtering:
+     Records filtered by award amount and timeframe for optimal targeting<o:p></o:p></li>
+ <li class="MsoNormal">Synapse
+     dataflow: Prepares data for Power BI reporting<o:p></o:p></li>
+</ul>
+
+<p class="MsoNormal"><a href="https://storage.3.basecamp.com/3945211/blobs/49b123c2-921e-11ef-9e5c-66879a478b81/download/image.png" target="_blank"><o:p></o:p></a></p>
+
+<p class="MsoNormal"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1584/5/1.jpg"><br></p><p class="MsoNormal"><b>Pipeline Workflow</b></p>
+
+<ol style="margin-top:0in" start="1" type="1">
+ <li class="MsoNormal"><b>SAM.gov
+     API to Lakehouse</b>: Copy contract data to staging tables<o:p></o:p></li>
+ <li class="MsoNormal"><b>Auto-refresh
+     Notebook</b>: Adds timestamps for updates<o:p></o:p></li>
+ <li class="MsoNormal"><b>1-Month
+     Filter Notebook</b>: Filters data by recent awards<o:p></o:p></li>
+ <li class="MsoNormal"><b>3-Year
+     Filter Notebook</b>: Filters awards with = $2 million value over three
+     years<o:p></o:p></li>
+ <li class="MsoNormal"><b>Merged
+     Notebook</b>: Combines filtered records<o:p></o:p></li>
+ <li class="MsoNormal"><b>Basecamp
+     Automation</b>: Updates project docs with CSV outputs<o:p></o:p></li>
+ <li class="MsoNormal"><b>Failure
+     Notification</b>: Sends email alerts for pipeline failures<o:p></o:p></li>
+</ol>
+
+<p class="MsoNormal"><a href="https://storage.3.basecamp.com/3945211/blobs/d5c5be32-921d-11ef-893f-f28505eae2ff/download/image.png" target="_blank"><o:p></o:p></a></p>
+
+<img src="https://app.colaberry.com/uploads/ProjectStepsImages/1584/5/2.jpg"><br>
+
+<p class="MsoNormal"><br></p><p class="MsoNormal"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1584/5/3.jpg"><br></p><p class="MsoNormal">
+VM drop phone data.<br>
+<a href="https://storage.3.basecamp.com/3945211/blobs/e9388a1a-392d-11ef-a7fe-aaa4f1cd8999/download/campaign_details%20(2).csv" target="_blank">campaign_details (2).csv50.4 KB&nbsp;</a></p><p class="MsoNormal">Here is the table&nbsp;<a href="CCPP.dbo.Archived_opportunities_Outreach_ContactDetails" target="_blank">CCPP.dbo.Archived_opportunities_Outreach_ContactDetails</a><br>&nbsp;proposals Sample file<o:p></o:p></p>
+
+<p class="MsoNormal"><a href="https://storage.3.basecamp.com/3945211/blobs/99f123c6-9775-11ef-9e86-1ab7a0b123c9/download/Contracts_20241001.csv" target="_blank">Contracts_20241001.csv854 KB&nbsp;</a></p><p class="MsoNormal"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1584/5/4.jpg"><br></p><p class="MsoNormal"></p><br><p></p>
+
+<p><a href="https://public.3.basecamp.com/p/7MAXpW5RNnBN3BxJYn5dYu3f" target="_blank">Model and Strategy</a><br></p>
+
